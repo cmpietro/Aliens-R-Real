@@ -100,7 +100,7 @@ select {
   background: black;
   background-image: url("../images/nasa.jpg");
   background-attachment: fixed;
-  background-position: bottom center;
+  background-position: center top;
   background-size: cover;
 }
 

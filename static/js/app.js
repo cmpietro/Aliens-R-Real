@@ -48,19 +48,19 @@ function filterData(){
     d3.event.preventDefault();
 
     // Extract the given input for all the fields on the web page
-    var Datevalue = inputDate.property("value")
-    var Cityvalue = inputCity.property("value")
-    var Statevalue = inputState.property("value")
-    var Countryvalue = inputCountry.property("value")
-    var Shapevalue = inputShape.property("value")
+    var DateValue = inputDate.property("value")
+    var CityValue = inputCity.property("value")
+    var StateValue = inputState.property("value")
+    var CountryValue = inputCountry.property("value")
+    var ShapeValue = inputShape.property("value")
 
     // Apply the conditions for filtering the data and assign it to a variable
     var filteredData = tableData.filter(function(recorded){
-       return ((recorded.datetime === Datevalue ||Datevalue == "" ) &&
-                (recorded.city === Cityvalue ||Cityvalue == "") &&
-                (recorded.state === Statevalue ||Statevalue == "")&&
-                (recorded.country === Countryvalue ||Countryvalue == "")&&
-                (recorded.shape === Shapevalue ||Shapevalue== "")
+       return ((recorded.datetime === DateValue ||DateValue == "" ) &&
+                (recorded.city === CityValue ||CityValue == "") &&
+                (recorded.state === StateValue ||StateValue == "")&&
+                (recorded.country === CountryValue ||CountryValue == "")&&
+                (recorded.shape === ShapeValue ||ShapeValue== "")
             )
     })
 

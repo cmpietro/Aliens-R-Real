@@ -16,7 +16,7 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="index.html">UFO Sightings
-            <img class="nav-ufo" src="static/images/ufo.svg">
+            <img class="nav-ufo" src="static/images/alienhead.svg>
           </a>
         </div>
       </div>
@@ -37,11 +37,28 @@
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
                         <label for="date">Enter a Date</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
+                        <input class="form-control" id="datetime" type="text" placeholder="1/01/2010">
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="text">Enter a City</label>
+                        <input class="form-control" id="city" type="text" placeholder="BENTON">
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="text">Enter a State</label>
+                        <input class="form-control" id="state" type="text" placeholder="AR">
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="text">Enter a Country</label>
+                        <input class="form-control" id="country" type="text" placeholder="US">
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="text">Enter a Shape</label>
+                        <input class="form-control" id="shape" type="text" placeholder="circle">
                       </li>
                     </ul>
                   </div>
                   <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+                  <button id="reset-btn" type="reset" class="btn btn-default">Reset Table</button>
                 </form>
               </div>
             </div>
