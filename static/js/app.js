@@ -1,25 +1,25 @@
 // from data.js
 var tableData = data;
 
-// Create table code
+// Create the table 
 var tableData = data;
 
-// reference the table body
+// Reference the table body
 var tbody = d3.select("tbody");
 
-//console log the data 
+//Console log the data 
 console.log(tableData);
 
-// Create an array with the column names from the given data 
+// Create an array with the column names from the data.js 
 var columns = ["datetime","city","state","country","shape","durationMinutes","comments"]
 
-// Loop through the array of givendata and append each row to table on to the webpage 
+// Loop through the array of the data and append each row to table on to the webpage 
 function loadData(){
     tableData.forEach(aliens =>{
         var row = tbody.append("tr")
         columns.forEach(column => {
             if(column =="city" || column =="state" ||column == "country"){
-                row.append("td").text(aliens[column].toUpperCase())
+                row.append("td").text(aliens[column].toUpperCase()) //change the headers to Upper case
               }
               else row.append("td").text(aliens[column])    
         })
@@ -27,7 +27,7 @@ function loadData(){
 }
 // call the function to load the data 
 loadData()
-// Get a reference to the input element on the page with the id property 
+// Reference  the input element on the page with the id property 
 var inputDate = d3.select("#datetime");
 var inputCity = d3.select("#city");
 var inputState = d3.select("#state");
@@ -35,18 +35,18 @@ var inputCountry = d3.select("#country");
 var inputShape = d3.select("#shape");
 
 
-// Get a reference to the filter button on the page with the id property set to `filter-btn`
+// Reference  the filter button on the page with the id property set to `filter-btn`
 var filterButton = d3.select("#filter-btn");
 
-// Get a reference to the filter button on the page with the id property set to `filter-btn`
+// Reference  the filter button on the page with the id property set to `filter-btn`
 var resetButton = d3.select("#reset-btn");
 
 // create a function for filtering the data with the given input
 function filterData(){
 
-    // Prevent the webpage from refreshing
+    // Prevention
     d3.event.preventDefault();
-
+   
     // Extract the given input for all the fields on the web page
     var DateValue = inputDate.property("value")
     var CityValue = inputCity.property("value")
@@ -68,7 +68,7 @@ function filterData(){
     console.log(filteredData)
     // Empty the table to append with the filtered data 
     tbody.text("")
-    // update the table with the filtered data     
+    // Update the table with the filtered data     
     filteredData.forEach(aliens =>{
         var row = tbody.append("tr")
         columns.forEach(column => {
@@ -79,14 +79,14 @@ function filterData(){
         })
     })
 }
-// Add event handler for the click button to filter the table with the given input
+// Filter table data and return input on click button
 filterButton.on("click",filterData)
 
-// create a function for resetting the table 
+// Reset the table 
 function resetData(){
     tbody.text("")
     loadData()
     }
     
-// Add event handler for the reset button to reset the table to original data 
+// Reset button to reset the table to original data 
 resetButton.on("click",resetData)
